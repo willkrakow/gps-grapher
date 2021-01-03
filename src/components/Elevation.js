@@ -3,7 +3,7 @@ import { Scatter } from "react-chartjs-2"
 import PropTypes from "prop-types"
 import { getElapsedTime, minTommss, getElevationGain } from "../utils"
 import Paper, { PaperTop } from './Paper'
-import { clickHandler, useStylePoints } from '../utils/events'
+import { clickHandler } from '../utils/events'
 
 //For each datapoint, set x to the elapsed time since start in minutes, y as the elevation in ft.
 function parseElevationData(points) {
@@ -15,7 +15,6 @@ function parseElevationData(points) {
 }
 
 const Elevation = ({ points, handleClick, selectedPoint, color }) => {
-    const pointStyles = useStylePoints(points, selectedPoint);
   const data = {
     labels: ["Elevation Data"],
     datasets: [
@@ -23,8 +22,8 @@ const Elevation = ({ points, handleClick, selectedPoint, color }) => {
         label: "Run",
         fill: false,
         backgroundColor: "rgba(75,192,192,0.4)",
-        pointBorderColor: pointStyles,
-        pointBackgroundColor: pointStyles,
+        pointBorderColor: "#fff",
+        pointBackgroundColor: "#fff",
         borderColor: "#f8fcff",
         pointBorderWidth: 2,
         pointHoverRadius: 10,

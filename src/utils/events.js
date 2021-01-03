@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
 
 export function clickHandler(elems, callback) {
   elems.length === 0 ? callback(null) : callback(elems[0]._index);
@@ -14,31 +13,31 @@ clickHandler.defaultProps = {
   elems: [],
 };
 
-export function useStylePoints(points, selectedPoint) {
-  const [styleArray, setStyleArray] = useState([]);
-  useEffect(() => {
-    try {
-      let arr = new Array(points.length).fill("#3498db");
-      if (!selectedPoint) {
-        setStyleArray(arr);
+// export function useStylePoints(points, selectedPoint) {
+//   const [styleArray, setStyleArray] = useState([]);
+//   useEffect(() => {
+//     try {
+//       let arr = new Array(points.length).fill("#3498db");
+//       if (!selectedPoint) {
+//         setStyleArray(arr);
 
-      } else {
-        console.log(arr);
-        arr[selectedPoint] = "#60bf00";
-        setStyleArray(arr);
-      }
-    } catch (error) {
-      console.log(`${error.name}: ${error.message}`);
-    }
-    return styleArray
-  }, [points, selectedPoint]);
-}
+//       } else {
+//         console.log(arr);
+//         arr[selectedPoint] = "#60bf00";
+//         setStyleArray(arr);
+//       }
+//     } catch (error) {
+//       console.log(`${error.name}: ${error.message}`);
+//     }
+//     return styleArray
+//   }, [points, selectedPoint]);
+// }
 
-useStylePoints.propTypes = {
-  points: PropTypes.array,
-  selectedPoint: PropTypes.number,
-};
+// useStylePoints.propTypes = {
+//   points: PropTypes.array,
+//   selectedPoint: PropTypes.number,
+// };
 
-useStylePoints.defaultProps = {
-  selectedPoint: null,
-};
+// useStylePoints.defaultProps = {
+//   selectedPoint: null,
+// };
