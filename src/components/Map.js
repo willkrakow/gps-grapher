@@ -293,7 +293,7 @@ return (
       <GoogleMapWrapper>
         <GoogleMap
           bootstrapURLKeys={{
-            key: "AIzaSyBO9qBTfwEh7cKkvNwKtZF2bQOqZo4DqRQ",
+            key: process.env.REACT_APP_GOOGLE_API_KEY,
           }}
           defaultCenter={center}
           defaultZoom={15}
