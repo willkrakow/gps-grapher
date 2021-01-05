@@ -217,9 +217,10 @@ getElevationGain.defaultProps = {
 
 export function netDistance(points) {
   let arr = [];
+  
   //For each datapoint, calculate distance in kilometers to the next point
-  for (let i = 0; i < points.length - 1; i++) {
-    const toAdd = distance(
+  for (let i = 0; i < points.length-1; i++) {
+    let toAdd = distance(
       points[i].$.lng,
       points[i].$.lat,
       points[i + 1].$.lng,
@@ -230,7 +231,7 @@ export function netDistance(points) {
     points[i].elapsedTime = getElapsedTime(points[0], points[i]);
   }
   //Add all points, round to nearest 1/100th kilometer
-  const sum = Math.round(arr.reduce((e, c) => e + c) * 100) / 100;
+  const sum = Math.round(arr.reduce((e, c) => e + c, 0) * 100) / 100;
   //Return net distance for path
   return sum.toString();
 }
