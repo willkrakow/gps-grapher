@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 
 const Paper = styled.div.attrs((props) => ({
-  className: `p-5 shadow bg-${props.color} text-light`,
+className: `${props.noPadding ? "" : "p-5"} shadow bg-${props.color} text-light`,
 }))`
   border-radius: 20px;
   background-image: linear-gradient(to bottom right, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 50%, rgba(255, 255, 255, 0.1));
