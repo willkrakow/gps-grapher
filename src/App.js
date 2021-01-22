@@ -1,5 +1,5 @@
-import React, { useState, useRef, createRef } from "react";
-import { Container, Row, Col, Form, Label, Input, FormGroup } from "reactstrap";
+import React, { useState, useRef } from "react";
+import { Container, Row, Col, Form, Input, FormGroup } from "reactstrap";
 import Map from "./components/Map";
 import GPX from "gpx-parser-builder";
 import Elevation from "./components/Elevation"
@@ -48,7 +48,7 @@ export default function App() {
   function handleFileChange(e) {
     fileReader = new FileReader();
     let ext = e.target.files[0].name.split('.').pop();
-    if (ext != "gpx") {
+    if (ext !== "gpx") {
         alert("Accepts .gpx files only") 
     }  else {
     setUploadName(e.target.files[0].name);
